@@ -1,5 +1,6 @@
 package io.smart.library.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Book
@@ -7,8 +8,10 @@ public class Book
 
     private String id;
     private String title;
-    private String author;
-    private String type;
+    private List<String> authors;
+    private String edition;
+    private int volume;
+    private String category;
     private float price;
 
     public String getTitle()
@@ -21,14 +24,14 @@ public class Book
         this.title = title;
     }
 
-    public String getAuthor()
+    public List<String> getAuthors()
     {
-        return author;
+        return authors;
     }
 
-    public void setAuthor(String author)
+    public void setAuthors(List<String> authors)
     {
-        this.author = author;
+        this.authors = authors;
     }
 
     public String getId()
@@ -41,14 +44,14 @@ public class Book
         this.id = id;
     }
 
-    public String getType()
+    public String getCategory()
     {
-        return type;
+        return category;
     }
 
-    public void setType(String type)
+    public void setCategory(String category)
     {
-        this.type = type;
+        this.category = category;
     }
 
     public float getPrice()
@@ -64,29 +67,44 @@ public class Book
     @Override
     public int hashCode()
     {
-        return Objects.hash(author, id, price, title, type);
+        return Objects.hash(authors, category, edition, id, price, title, volume);
     }
 
     @Override
     public boolean equals(Object obj)
     {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
         Book other = (Book) obj;
-        return Objects.equals(author, other.author) && Objects.equals(id, other.id)
-                && Float.floatToIntBits(price) == Float.floatToIntBits(other.price)
-                && Objects.equals(title, other.title) && Objects.equals(type, other.type);
+        return Objects.equals(authors, other.authors) && Objects.equals(category, other.category) && Objects.equals(edition, other.edition) && Objects.equals(id, other.id) && Float.floatToIntBits(price) == Float.floatToIntBits(other.price) && Objects.equals(title, other.title)
+                && volume == other.volume;
     }
 
     @Override
     public String toString()
     {
-        return "Book [id=" + id + ", title=" + title + ", author=" + author + ", type=" + type + ", price=" + price
-                + "]";
+        return "Book [id=" + id + ", title=" + title + ", authors=" + authors + ", edition=" + edition + ", volume=" + volume + ", category=" + category + ", price=" + price + "]";
+    }
+
+    public String getEdition()
+    {
+        return edition;
+    }
+
+    public void setEdition(String edition)
+    {
+        this.edition = edition;
+    }
+
+    public int getVolume()
+    {
+        return volume;
+    }
+
+    public void setVolume(int volume)
+    {
+        this.volume = volume;
     }
 
 }

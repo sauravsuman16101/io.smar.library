@@ -11,7 +11,14 @@
   <description>Interface to get Book Related Informations</description>
   <packaging>jar</packaging>
   <properties>
-      <springboot-version>2.7.1</springboot-version>
   </properties>
-  
+
+  <dependencies>
+      <dependency>
+           <groupId>io.smart.library</groupId>
+           <artifactId>entities</artifactId>
+           <version>${project.version}</version>
+      </dependency>
+  </dependencies>
+
 </project>

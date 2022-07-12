@@ -16,6 +16,10 @@
       <org.assertj-core.version>3.22.0</org.assertj-core.version>
       <org.cassandra-unit.vrsion>3.0.0.1</org.cassandra-unit.vrsion>
       <org.springboot-starter-web.version>2.7.1</org.springboot-starter-web.version>
+      
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
+
   </properties>
   
   <dependencies>
@@ -56,5 +60,12 @@
           <artifactId>cassandra-unit</artifactId>
           <version>${org.cassandra-unit.vrsion}</version>
       </dependency>
+
+      <!--<dependency>
+           <groupId>io.smart.library</groupId>
+           <artifactId>entities</artifactId>
+           <version>${project.version}</version>
+      </dependency>-->
+
   </dependencies>
 </project>
